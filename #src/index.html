@@ -3,16 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>maket 5</title>
+		<title>maket 5</title>
+
+		<!-- bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<!-- bootstrap -->
+
+		<!-- slider -->
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<!-- slider -->
+
+		<!-- styles -->
 		<link rel="stylesheet" href="css/style.min.css">
+		<!-- styles -->
+
+		<!-- fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+		<!-- fonts -->
+
+		<!-- icons -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+		<!-- icons -->
+
 </head>
 <body>
 		<main class="main">
 			<section class="home">
-				@@include('_header.html')
+				<header class="header">
+	
+					<!-- ./container -->
+					<div class="container">
+						<div class="header-row row">
+				
+							<!-- ./logo -->
+							<a href="#" class="logo col-xl-2 mr-auto">
+								<span class="logo__lucid">lucid</span>
+								<span class="logo__subtitle">onepage
+									theme</span>		
+							</a>
+							<!-- /.logo -->
+				
+							<!-- /.menu-nav -->
+							<nav id="menu-nav" class="menu-nav col-xl-5">
+								<a href="#" class="menu-nav__link active-link">Home</a>
+								<a href="#" class="menu-nav__link">Features</a>
+								<a href="#" class="menu-nav__link">About</a>
+								<a href="#" class="menu-nav__link">Testimonials</a>
+								<a href="#" class="menu-nav__link">Pricing</a>
+								<a href="#" class="menu-nav__link">Contact</a>
+							</nav>
+							<!-- /.menu-nav -->
+				
+						</div>
+					</div>
+					<!-- /.container -->
+					
+				</header>
 				<div class="home__container container">
 					<div class="row">
 						<div class="home__introducing col-xl-6">
@@ -285,10 +331,17 @@
 			<!-- /.testimonials -->
 			<section class="eye-catcher">
 				<div class="container">
-					<div class="eye-catcher row">
-						<div class="eye-catcher__text col-xl-7"><span class="eye-catcher__like">Like what you see?</span> <!-- /.eye-catcher__like --><span class="eye-catcher__get"> Get this great theme now!</span> <!-- /.eye-catcher__get --></div>
+					<div class="eye-catcher-row row">
+						<div class="eye-catcher__text col-xl-8">
+							<span class="eye-catcher__like">Like what you see? </span> <!-- /.eye-catcher__like -->
+							<span class="eye-catcher__get"> Get this great theme now!</span> 
+							<!-- /.eye-catcher__get --></div>
 						<!-- /.eye-catcher__text col-xl-7 -->
-						<div class="eye-catcher__buttons col-xl-4"><button class="eye-catcher__view-btn">view features</button> <!-- /.eye-catcher__view-btn --><button class="eye-catcher__down-btn">download now</button> <!-- /.eye-catcher__down-btn --></div>
+						<div class="eye-catcher__buttons col-xl-4">
+							<button class="eye-catcher__view-btn">view features</button> 
+							<!-- /.eye-catcher__view-btn -->
+							<button class="eye-catcher__down-btn">download now</button> <!-- /.eye-catcher__down-btn -->
+						</div>
 						<!-- /.eye-catcher__buttons col-xl-4 -->
 					</div>
 					<!-- /.eye-catcher row -->
@@ -296,6 +349,143 @@
 				<!-- /.container -->
 			</section>
 			<!-- /.eye-catcher -->
+			<section class="prising">
+				<div class="container">
+					<div class="row-header row">
+						<div class="header col-xl-4 offset-xl-4">
+							<h6 class="header__smalltitle">quality has its price</h6>
+							<!-- /.header__smalltitle -->
+							<h1 class="header__title">Pricings & Plans</h1>
+							<!-- /.header__title -->
+						</div>
+						<!-- /.header__col col-xl-4 offset-xl-4 -->
+					</div>
+					<!-- /.row-header row -->
+					<div class="plans row">
+						<div class="plans__item item col-xl-3">
+							<h3 class="item__title">Free</h3>
+							<!-- /.item__title -->
+							<div class="price">
+								<h1 class="price__value">0</h1>
+								<!-- /.item__price -->
+								<span class="price__per-month">/per month</span>
+								<!-- /.price__per-month -->
+							</div>
+							<!-- /.item__price-block -->
+							<p class="item__text">Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+							<!-- /.item__text -->
+							<button class="item__oreder-btn">Order now</button>
+							<!-- /.item__oreder-btn -->
+						</div>
+						<!-- /.plans__item item col-xl-3 -->
+						<div class="plans__item item col-xl-3">
+							<h3 class="item__title">Personal</h3>
+							<!-- /.item__title -->
+							<div class="price">
+								<h1 class="price__value">25</h1>
+								<!-- /.item__price -->
+								<span class="price__per-month">/per month</span>
+								<!-- /.price__per-month -->
+							</div>
+							<!-- /.item__price-block -->
+							<p class="item__text">Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+							<!-- /.item__text -->
+							<button class="item__oreder-btn">Order now</button>
+							<!-- /.item__oreder-btn -->
+						</div>
+						<!-- /.plans__item item col-xl-3 -->
+						<div class="plans__item item active-item col-xl-3">
+							<h3 class="item__title">Business</h3>
+							<!-- /.item__title -->
+							<div class="price">
+								<h1 class="price__value">50</h1>
+								<!-- /.item__price -->
+								<span class="price__per-month">/per month</span>
+								<!-- /.price__per-month -->
+							</div>
+							<!-- /.item__price-block -->
+							<p class="item__text">Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+							<!-- /.item__text -->
+							<button class="item__oreder-btn">Order  now</button>
+							<!-- /.item__oreder-btn -->
+						</div>
+						<!-- /.plans__item item col-xl-3 -->
+						<div class="plans__item item col-xl-3">
+							<h3 class="item__title">Ultimate</h3>
+							<!-- /.item__title -->
+							<div class="price">
+								<h1 class="price__value">99</h1>
+								<!-- /.item__price -->
+								<span class="price__per-month">/per month</span>
+								<!-- /.price__per-month -->
+							</div>
+							<!-- /.item__price-block -->
+							<p class="item__text">Fusce fermentum placerat magna ac pharetra. Aliquam euismod elit non ipsum <span>lacinia</span> consectetur.</p>
+							<!-- /.item__text -->
+							<button class="item__oreder-btn">Order now</button>
+							<!-- /.item__oreder-btn -->
+						</div>
+						<!-- /.plans__item item col-xl-3 -->
+					</div>
+					<!-- /.plans row -->
+				</div>
+				<!-- /.container -->
+			</section>
+			<!-- /.prising -->
+			<section class="contactUs">
+				<div class="container">
+					<div class="row-header row">
+						<div class="header col-xl-2 offset-xl-5">
+							<h6 class="header__smalltitle">Stay in touch</h6>
+							<!-- /.header__smalltitle -->
+							<h1 class="header__title">Contact us</h1>
+							<!-- /.header__title -->
+						</div>
+						<!-- /.header col-xl-2 -->
+					</div>
+					<!-- /.row-header row -->
+					<div class="contacts-row row">
+						<div class="item col-xl-2 offset-xl-1">
+							<img src="img/Phone.svg" alt="phone" class="item__img">
+							<p class="item__text">Phone: (415) 124-5678<br>Fax: (412) 123-8290</p>
+							<!-- /.item__text -->
+						</div>
+						<!-- /.item col-xl-2 -->
+						<div class="item col-xl-2 offset-xl-2">
+							<img src="img/Pointer.svg" alt="pointer" class="item__img">
+							<p class="item__text">1001 Brickell Bay Dr.<br>Suite 1900<br>Miami, FL 33131</p>
+							<!-- /.item__text -->
+						</div>
+						<!-- /.item col-xl-2 -->
+						<div class="item col-xl-2 offset-xl-1">
+							<img src="img/Envelope.svg" alt="envelope" class="item__img">
+							<p class="item__text">support@yourname.com</p>
+							<!-- /.item__text -->
+						</div>
+						<!-- /.item col-xl-2 -->
+					</div>
+					<!-- /.contacts-row row justify-content-between -->
+					<div class="form-row row">
+						<form action="#" class="form col-xl-8 offset-xl-2">
+							<div class="info">
+								<input type="text" class="info__input" placeholder="Name *" required>
+								<input type="text" class="info__input" placeholder="Email *" required>
+								<input type="text" class="info__input" placeholder="Subject *" required>
+							</div>
+							<!-- /.info -->
+							<textarea class="form__area" name="#" id="#" cols="30" rows="7" placeholder="message *" required></textarea>
+							<button class="form__send-btn">Send message</button> <!-- /.form__send-btn -->
+						</form>
+						<!-- /.form col-xl-8 -->
+					</div>
+					<!-- /.form-row row -->
+				</div>
+				<!-- /.container -->
+			</section>
+			<!-- /.contactUs -->
+			<section class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.1786111183696!2d-80.19271503355246!3d25.764663356094818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6823bcf83f7%3A0x2463ac2a5b95f900!2zMTAwMSBCcmlja2VsbCBCYXkgRHIsIE1pYW1pLCBGTCAzMzEzMSwg0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1598875708601!5m2!1suk!2sua" width="100%" height="437px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</section>
 		</main>
 		@@include('_footer.html')
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
