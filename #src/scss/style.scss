@@ -1,56 +1,10 @@
-@mixin font($font_name, $file_name, $weight, $style) {
-
-    @font-face {
-    font-family: $font_name;
-    font-display: swap;
-    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
-    font-weight: #{$weight};
-    font-style: #{$style};
-    }
-}
-
-@mixin flex() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin smaltitle() {
-    color: $smalltitle;
-    font-size: 14px;
-    font-family: SourceSansProBold;
-    line-height: 45px;
-    text-transform: uppercase;
-}
-
-@mixin text {
-    color: $paragraphs;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 26px;
-}
-
-@mixin title {
-    color: $headers;
-    font-size: 34px;
-    font-weight: 600;
-    line-height: 22px;
-    position: relative;
-}
-
-@mixin pseudo {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    width: 20px;
-    height: 2px;
-    background-color: $activeunderline;
-}
-
+@import "mixins.scss";
 @import "colors";
 @import "fonts";
 @import "slider";
+/***** imports *****/
 
+/***** common settings *****/
 * {
     box-sizing: border-box;
     outline: none;
@@ -68,60 +22,37 @@ body {
     max-width: 1170px;
 }
 
-.home, .about-short {
+.site-block {
     width: 100%;
 }
+/***** common settings *****/
 
+/***** home block *****/
 .home {
     min-height: 640px;
     background: $darkbg url(../img/photo.png) no-repeat 2px 0px;
     background-size: cover;
 
-    &__introducing {
+    .introducing {
         padding: 65px 0px 0px 0px;
-    }
-    
-    &__smalltitle {
-        @include smaltitle;
-        letter-spacing: 1.4px;
-    }
-    &__title {
-        color: $white;
-        font-size: 46px;
-        font-weight: 600;
-        line-height: 48px;
-        letter-spacing: 1.52px;
-    }
 
-    &__text {
-        width: 478px;
-        @include text;
-        margin-top: 23px;
-    }
-    &__buttons {
-        margin-top: 60px;
+        &__smalltitle {
+            @include smaltitle;
+            letter-spacing: 1.4px;
+        }
 
-        .home__down-btn, .home__view-btn {
-            width: 160px;
-            height: 50px;
-            outline: none;
-            font-size: 14px;
-            font-family: SourceSansProBold;
-            text-transform: uppercase;
+        &__title {
+            font-size: 46px;
+            font-weight: 600;
+            line-height: 48px;
+            letter-spacing: 1.52px;
             color: $white;
-            border-radius: 3px;
         }
 
-        .home__down-btn {
-            box-shadow: 0 0 3px rgba(3, 3, 3, 0.1);
-            background-color: $bluebtns;
-            border: none;
-        }
-
-        .home__view-btn {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background-color: transparent;
-            margin-left: 17px;
+        &__text {
+            @include text;
+            width: 478px;
+            margin: 23px 0 60px;
         }
     }
 
@@ -129,84 +60,114 @@ body {
         height: 560px;
         background: url(../img/devices.png) no-repeat -5px 42px;
     }
-}
 
-.header {
+    .header-row {
+        padding-top: 20px;
 
-    &__row {
-        padding-top: 21px;
-    }
-    &__logo{
-        padding: 0;
-        color: $white;
+        .logo {
+            width: 150px;
+            padding: 0;
+            color: $white;
+            
+            a {
+                text-decoration: none;
+                color: $white;   
+            }
+
+            &__lucid {
+                font-family: 'Quicksand', sans-serif;
+                font-size: 24px;
+                line-height: 58px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            &__subtitle {
+                display: inline-block;
+                width: 44px;
+                opacity: 0.3;
+                color: $white;
+                font-size: 9px;
+                line-height: 10px;
+                text-transform: uppercase;
+                letter-spacing: 1.26px;
+            }
+        }
+        .menu-nav {
+            padding: 0;
+            @include flex;
+            justify-content: flex-end;
+
+            &__link {
+                font-family: SourceSansProSemiBold;
+                line-height: 20px;
+                color: #fffefe;
+                position: relative;
         
-        &:hover {
-            text-decoration: none;
-            color: $white;
+                &:not(:first-child) {
+                    margin-left: 23.4px;
+                }
+        
+                &:hover {
+                    text-decoration: none;
+                    color: $white;
+                }
+            }
+        
+            .active-link {
+                text-decoration: none;
+                color: $white;
+        
+                &::before, &::after {
+                    @include pseudo;
+                    width: 48%;
+                    bottom: -8px;
+                }
+                &::before {
+                    left: 0;
+                }
+        
+                &::after {
+                    right: 0;
+                    width: 47%;
+                }
+            }
         }
+        
     }
-    &__lucid {
-        font-family: 'Quicksand', sans-serif;
-        font-size: 24px;
-        line-height: 58px;
+}   
+
+/***** buttons *****/
+.buttons {
+    @include flex;
+    width: 342px;
+    justify-content: space-between;
+
+    .down-btn, .view-btn {
+        width: 160px;
+        height: 50px;
+        border-radius: 3px;
+        outline: none;
+        font-family: SourceSansProBold;
+        font-size: 14px;
         text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    &__subtitle {
-        display: inline-block;
-        width: 44px;
-        opacity: 0.3;
         color: $white;
-        font-size: 9px;
-        line-height: 10px;
-        text-transform: uppercase;
-        letter-spacing: 1.26px;
-    }
-    &__menu-nav {
-        padding: 0;
-        @include flex;
-        justify-content: flex-end;
-    }
-    &__link {
-        font-size: 16px;
-        font-family: SourceSansProSemiBold;
-        line-height: 20px;
-        color: #fffefe;
-        padding-bottom: 2px;
-        position: relative;
-
-        &:not(:last-child) {
-            margin-right: 23.4px;
-        }
-
-        &:hover {
-            text-decoration: none;
-            color: $white;
-        }
     }
 
-    .active-link {
-        text-decoration: none;
-        color: $white;
+    .down-btn {
+        box-shadow: 0 0 3px rgba(3, 3, 3, 0.1);
+        background-color: $bluebtns;
+        border: none;
+    }
 
-        &::before, &::after {
-            @include pseudo;
-            width: 48%;
-            bottom: -8px;
-        }
-        &::before {
-            left: 0;
-        }
-
-        &::after {
-            right: 0;
-            width: 47%;
-        }
+    .view-btn {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: transparent;
     }
 }
+/***** buttons *****/ 
 
-
-
+/***** features *****/ 
 .features {
 
     &__header {
@@ -279,6 +240,8 @@ body {
     height: 1px;
     background-color: $contactsbg;
 }
+/***** features *****/ 
+
 
 .about-long {
 
@@ -462,7 +425,6 @@ body {
 }
 
 .eye-catcher {
-    width: 100%;
     min-height: 170px;
     background-color: $darkbg;
     margin-top: -16px;
@@ -647,7 +609,6 @@ body {
 }
 
 .contactUs {
-    width: 100%;
     height: 650px;
     background-color: $contactsbg;
 
@@ -781,12 +742,10 @@ body {
 }
 
 .map {
-    width: 100%;
     height: 437px;
 }
 
 .footer {
-    width: 100%;
     height: 160px;
     background-color: $darkbg;
 
