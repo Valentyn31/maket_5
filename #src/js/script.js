@@ -27,9 +27,37 @@ menuNav.addEventListener('click', event => {
       let section = document.getElementById(href);
       
       scrollTo(section);
+
+      burger.classList.remove('active-btn');
+
+      menuNavLink.forEach(link => {
+        link.classList.toggle('hide');
+    
+        if (link.classList.contains('hide')) {
+          link.classList.add('revers');
+        }
+        else {
+          link.classList.remove('revers');
+        }
+      });
+
+      menuNav.classList.remove('visible');
     }
 });
 /***** menu scroll *****/
+
+menuNav.addEventListener('mouseover', event => {
+  let target = event.target;
+
+  if (target.classList.contains('menu-nav__link')) {
+    let width = target.clientWidth;
+    let underline = target.querySelector('#underline');
+
+    underline.style.width = `${width}px`;
+    underline.querySelector('.underline__first').style.width = `${width / 2 - 1}px`;
+    underline.querySelector('.underline__second').style.width = `${width / 2 - 1}px`;
+  }
+});
 
 /***** dropdown *****/
 burger.addEventListener('click', () => {
